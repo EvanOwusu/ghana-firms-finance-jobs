@@ -1,0 +1,5 @@
+   data/
+   *.dta
+   *DO_NOT_SHARE*
+   __pycache__/
+   .Rhistory
