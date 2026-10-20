@@ -2,6 +2,14 @@
 
 What holds back Ghana's formal private firms, who is excluded from credit, and does credit go with job creation? This repo answers those questions with the **World Bank Enterprise Survey, Ghana 2023** (713 establishments, fieldwork 2023–24). All estimates use the survey weights (`wmedian`) and the stratified design (`strata`).
 
+> 📄 **[Read the two-page policy note (PDF)](Policy_Note.pdf)**: the findings and the operational recommendations for SME lending in Ghana.
+
+<p align="center">
+  <a href="Policy_Note.pdf"><img src="docs/policy_note_page-1.png" width="45%" alt="Policy note, page 1"></a>
+  &nbsp;
+  <a href="Policy_Note.pdf"><img src="docs/policy_note_page-2.png" width="45%" alt="Policy note, page 2"></a>
+</p>
+
 ## Key findings
 
 | # | Finding | Estimate (95% CI) |
@@ -20,6 +28,8 @@ What holds back Ghana's formal private firms, who is excluded from credit, and d
 ## Repository structure
 
 ```
+Policy_Note.pdf                  Two-page policy note (findings and recommendations)
+Ghana_firms_finance_jobs.ipynb   Notebook version of the full workflow, with outputs
 python/survey.py      Design-based estimation (stratified Taylor linearisation, lonely-PSU "adjust")
 python/analysis.py    Main pipeline: cleaning, estimates, models, charts
 R/analysis.R          R translation using the `survey` package
@@ -30,7 +40,7 @@ output/               Aggregate tables (CSV), charts (PNG), results JSON
 ## How to run
 
 1. Register at the [Enterprise Surveys portal](https://www.enterprisesurveys.org/en/survey-datasets) and download `Ghana-2023-full-data.dta` into `data/`. (The portal file may arrive as a zip with a `.dta` name. Unzip it first.)
-2. Python (pandas, numpy, scipy, matplotlib):
+2. Python (pandas, numpy, scipy, matplotlib): open `Ghana_firms_finance_jobs.ipynb` and run all cells from the repo root, or run the script:
    `python python/analysis.py data/Ghana-2023-full-data.dta`
 3. R (haven, survey, jsonlite):
    `Rscript R/analysis.R data/Ghana-2023-full-data.dta`
